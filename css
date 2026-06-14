@@ -1,0 +1,92 @@
+/* =============================================
+   PixelForge — Estilos Globais
+   Parte 4: Esqueleto do Site
+   ============================================= */
+ 
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+/* --- Variáveis de Design --- */
+:root {
+  --color-bg:          #0f0f1a;   /* fundo escuro azul-noturno */
+  --color-surface:     #1a1a2e;   /* superfície de cards/header */
+  --color-accent:      #e040fb;   /* roxo neon — pixel vibrante */
+  --color-accent-alt:  #00e5ff;   /* ciano elétrico — segundo acento */
+  --color-text:        #e8e8f0;   /* texto principal: alto contraste */
+  --color-text-muted:  #8888aa;   /* texto secundário */
+ 
+  --font-display: 'Courier New', Courier, monospace; /* fonte pixelada / mono */
+  --font-body:    system-ui, -apple-system, sans-serif;
+ 
+  --font-size-base:    1rem;       /* 16px */
+  --font-size-title:   2.75rem;
+  --font-size-desc:    1.125rem;
+ 
+  --spacing-sm:  0.75rem;
+  --spacing-md:  1.5rem;
+  --spacing-lg:  3rem;
+}
+ 
+/* --- Documento --- */
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+ 
+/* --- Cabeçalho --- */
+.site-header {
+  text-align: center;
+}
+ 
+.site-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+ 
+  /* Efeito de glow neon com o acento roxo */
+  color: var(--color-accent);
+  text-shadow:
+    0 0 8px  var(--color-accent),
+    0 0 24px var(--color-accent),
+    0 0 60px var(--color-accent-alt);
+}
+ 
+/* --- Conteúdo Principal --- */
+.site-main {
+  text-align: center;
+  max-width: 540px;
+}
+ 
+.site-description {
+  font-size: var(--font-size-desc);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+ 
+  /* Linha de destaque sutil à esquerda */
+  border-left: 3px solid var(--color-accent-alt);
+  padding-left: var(--spacing-sm);
+  text-align: left;
+}
